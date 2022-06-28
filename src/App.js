@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const min = 0;
+  const max = 100;
+  const [num, setNum] = useState(0);
+  
+  // get number between min  and max 
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // setting the handleClick 
+  const handleClick = () => {
+    setNum(randomNumber(min, max));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Number is: {num}</h2>
+      <button onClick={handleClick}>Generate a random number</button>
     </div>
   );
-}
+};
 
 export default App;
