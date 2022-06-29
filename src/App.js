@@ -11,7 +11,7 @@ const App = () => {
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-
+ 
   // setting the handleClick 
   const handleClick = () => {
     setNum(randomNumber(min, max));
